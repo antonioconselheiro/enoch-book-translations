@@ -1,0 +1,11 @@
+services:
+  enochs-dev:
+    image: enochs-dev
+    container_name: enochs-dev
+    build:
+      context: ../.
+      dockerfile: ./.devcontainer/Dockerfile
+    working_dir: /enochs
+    volumes:
+      - ..:/enochs:cached
+    tty: true

@@ -1,0 +1,39 @@
+{
+  "en": {
+    "key": "en",
+    "name": "English",
+    "translations": {
+      "enoch-book-en-laurence-1821": {
+        "key": "enoch-book-en-laurence-1821",
+        "name": "Enoch the prophet 1821 (Richard Laurence)"
+      },
+      "enoch-book-en-schodde-1882": {
+        "key": "enoch-book-en-schodde-1882",
+        "name": "Book of Enoch 1882 (George Henry Schodde)"
+      },
+      "enoch-book-en-hcharles-1912": {
+        "key": "enoch-book-en-hcharles-1912",
+        "name": "Book of Enoch 1912 (Robert Henry Charles)"
+      },
+      "enoch-book-en-dillmann-1826": {
+        "key": "enoch-book-en-dillmann-1826",
+        "name": "Propheten Enoch 1826 (August Dillmann)"
+      }
+    }
+  },
+
+  "geez": {
+    "key": "geez",
+    "name": "Gəʿəz",
+    "translations": {
+      "enoch-book-geez-enoksbok-se": {
+        "key": "enoch-book-geez-enoksbok-se",
+        "name": "Ethiopian book of Enoch, enoksbok.se"
+      },
+      "enoch-book-geez-ran-hacohen": {
+        "key": "enoch-book-geez-ran-hacohen",
+        "name": "Ethiopian book of Enoch, Ran HaCohen, Tel Aviv University"
+      }
+    }
+  }
+}
