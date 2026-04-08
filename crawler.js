@@ -120,6 +120,10 @@ const enochsSwedish1826 = { chapters: [] };
 //  Henochs Bok 1901
 const enochsSwedish1901 = { chapters: [] };
 
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 async function fetchChapter(chapter) {
   const url = chapters[chapter];
   let attempts = 0;
@@ -166,20 +170,27 @@ async function loadChapter(chapter) {
 
 function extractVerseFromDom(td, index) {
   const noteElement = td.querySelector('.VNOT2');
-  const note = noteElement.innerText;
-  noteElement.remove();
-  const text = td.innerText.replace(/^\d+\.?/).trim();
+  const verse = {};
+
+  if (noteElement) {
+    const note = noteElement.innerText.trim();
+    if (note) {
+      verse.note = note;
+    }
+    noteElement.remove();
+  }
+
+  const text = td.innerText.replace(/^\d+\.?/, '').trim();
   const [verseNumber] = td.innerText.match(/^\d+/) || [null];
 
-  return {
-    text,
-    note,
-    verse: {
-      index,
-      start: verseNumber,
-      end: verseNumber
-    }
+  verse.text = text;
+  verse.verse = {
+    index,
+    start: verseNumber,
+    end: verseNumber
   };
+
+  return verse;
 }
 
 async function runCrawler() {

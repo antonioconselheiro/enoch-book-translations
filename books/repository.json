@@ -14,10 +14,22 @@
       "enoch-book-en-hcharles-1912": {
         "key": "enoch-book-en-hcharles-1912",
         "name": "Book of Enoch 1912 (Robert Henry Charles)"
+      }
+    }
+  },
+
+  "sv": {
+    "key": "sv",
+    "name": "Svenska",
+    "translations": {
+      "enoch-book-sv-1826": {
+        "key": "enoch-book-sv-1826",
+        "name": "Propheten Enoch 1826"
       },
-      "enoch-book-en-dillmann-1826": {
-        "key": "enoch-book-en-dillmann-1826",
-        "name": "Propheten Enoch 1826 (August Dillmann)"
+
+      "enoch-book-sv-1901": {
+        "key": "enoch-book-sv-1901",
+        "name": "Henochs Bok 1901"
       }
     }
   },
@@ -26,10 +38,6 @@
     "key": "geez",
     "name": "Gəʿəz",
     "translations": {
-      "enoch-book-geez-enoksbok-se": {
-        "key": "enoch-book-geez-enoksbok-se",
-        "name": "Ethiopian book of Enoch, enoksbok.se"
-      },
       "enoch-book-geez-ran-hacohen": {
         "key": "enoch-book-geez-ran-hacohen",
         "name": "Ethiopian book of Enoch, Ran HaCohen, Tel Aviv University"
