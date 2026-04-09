@@ -34,12 +34,12 @@
     }
   },
 
-  "geez": {
-    "key": "geez",
+  "gez": {
+    "key": "gez",
     "name": "Gəʿəz",
     "translations": {
-      "enoch-book-geez-ran-hacohen": {
-        "key": "enoch-book-geez-ran-hacohen",
+      "enoch-book-gez-ran-hacohen": {
+        "key": "enoch-book-gez-ran-hacohen",
         "name": "Ethiopian book of Enoch, Ran HaCohen, Tel Aviv University"
       }
     }
