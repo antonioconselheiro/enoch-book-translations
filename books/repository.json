@@ -34,6 +34,17 @@
     }
   },
 
+  "ar": {
+    "key": "ar",
+    "name": "Aramaic",
+    "translations": {
+      "enoch-fragment-ar-dead-sea-scrolls": {
+        "key": "enoch-fragment-ar-dead-sea-scrolls",
+        "name": "Dead Sea Scrolls"
+      }
+    }
+  },
+
   "gez": {
     "key": "gez",
     "name": "Gəʿəz",
@@ -41,6 +52,33 @@
       "enoch-book-gez-ran-hacohen": {
         "key": "enoch-book-gez-ran-hacohen",
         "name": "Ethiopian book of Enoch, Ran HaCohen, Tel Aviv University"
+      }
+    }
+  },
+
+  "el": {
+    "key": "el",
+    "name": "Greek",
+    "translations": {
+      "enoch-fragment-el-cairo-papyrus-10759": {
+        "key": "enoch-fragment-el-cairo-papyrus-10759",
+        "name": "Enoch fragment from Cairo papyrus 10759"
+      },
+      "enoch-fragment-el-chester-beatty-185": {
+        "key": "enoch-fragment-el-chester-beatty-185",
+        "name": "Enoch fragment from Chester Beatty 185"
+      },
+      "enoch-fragment-el-dead-sea-scrolls": {
+        "key": "enoch-fragment-el-dead-sea-scrolls",
+        "name": "Enoch fragment from Dead Sea Scrolls"
+      },
+      "enoch-fragment-el-papyrus-oxyrhynchus-2096": {
+        "key": "enoch-fragment-el-papyrus-oxyrhynchus-2096",
+        "name": "Enoch fragment from Papyrus Oxyrhynchus 2096"
+      },
+      "enoch-fragment-el-syncellys": {
+        "key": "enoch-fragment-el-syncellys",
+        "name": "Georgius Syncellus Chronographia Enoch Book Fragments"
       }
     }
   }
