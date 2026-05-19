@@ -79,6 +79,10 @@
       "enoch-fragment-el-syncellys": {
         "key": "enoch-fragment-el-syncellys",
         "name": "Georgius Syncellus Chronographia Enoch Book Fragments"
+      },
+      "enoch-fragment-el-vaticano-1809": {
+        "key": "enoch-fragment-el-vaticano-1809",
+        "name": "Bibl. Apost. Vatic., vatic. gr.1809, f. 216v"
       }
     }
   }

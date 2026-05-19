@@ -5,94 +5,105 @@ function domToJson(root) {
 
   let currentChapter = null;
   let currentVerse = null;
-  let verseText = [];
+  let currentText = [];
+
+  function cleanText(text) {
+    return text
+      .replace(/\u200F/g, "") // RTL marks
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function ensureChapterExists(chapterNumber) {
+    while (result.chapters.length < chapterNumber) {
+      result.chapters.push([]);
+    }
+  }
 
   function finalizeVerse() {
     if (
-      currentChapter !== null &&
-      currentVerse !== null &&
-      verseText.length > 0
+      currentChapter === null ||
+      currentVerse === null
     ) {
-      result.chapters[currentChapter].push({
-        text: verseText.join(" ").replace(/\s+/g, " ").trim(),
+      currentText = [];
+      return;
+    }
+
+    const text = cleanText(currentText.join(" "));
+
+    if (text && text !== "None") {
+      const chapterArray =
+        result.chapters[currentChapter - 1];
+
+      chapterArray.push({
+        text,
         verse: {
-          index: result.chapters[currentChapter].length,
+          index: chapterArray.length,
           start: currentVerse,
           end: currentVerse
         }
       });
     }
 
-    verseText = [];
+    currentText = [];
   }
 
-  const nodes = [...root.childNodes];
+  const elements = [...root.children];
 
-  for (const node of nodes) {
-    // Ignora text nodes vazios
-    if (node.nodeType === Node.TEXT_NODE) continue;
+  for (const el of elements) {
+    const text = cleanText(el.textContent);
 
-    if (node.nodeType !== Node.ELEMENT_NODE) continue;
+    if (!text) continue;
 
-    const text = node.textContent.trim();
-
-    // Ignora textos None
-    if (text === "None") continue;
-
-    // -------------------------
+    // -------------------
     // CAPÍTULO
-    // -------------------------
-    if (node.classList.contains("refmarker_0")) {
-      // Fecha verso anterior
+    // -------------------
+    if (el.classList.contains("refmarker_0")) {
       finalizeVerse();
 
-      currentChapter = parseInt(text, 10) - 1;
+      currentChapter = parseInt(text, 10);
 
-      if (!result.chapters[currentChapter]) {
-        result.chapters[currentChapter] = [];
-      }
+      ensureChapterExists(currentChapter);
 
       currentVerse = null;
+
       continue;
     }
 
-    // -------------------------
+    // -------------------
     // VERSO
-    // -------------------------
-    if (node.classList.contains("refmarker_1")) {
-      // Fecha verso anterior
+    // -------------------
+    if (el.classList.contains("refmarker_1")) {
       finalizeVerse();
 
       currentVerse = text;
+
       continue;
     }
 
-    // -------------------------
+    // -------------------
     // TEXTO
-    // -------------------------
+    // -------------------
     if (
-      node.matches("span.Greek, a.Greek")
+      el.tagName === "SPAN" ||
+      el.tagName === "A"
     ) {
-      const clean = text.replace(/\s+/g, " ").trim();
-
-      if (clean && clean !== "None") {
-        verseText.push(clean);
+      if (text !== "None") {
+        currentText.push(text);
       }
     }
   }
 
-  // Fecha último verso
   finalizeVerse();
 
   return result;
 }
 
 /**
- * Uso:
+ * Uso
  */
 const root = document.querySelector("#textframe0");
 
 const json = domToJson(root);
 
-console.log(json);
 console.log(JSON.stringify(json));
